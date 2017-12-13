@@ -378,8 +378,16 @@ hr {
       }
 
       // Adjust font size for bigger numbers
+	  @if $power <= 100 {
+        font-size: 30px;
+
+        // Media queries placed here to avoid carrying over the rest of the logic
+        @include smaller($mobile-threshold) {
+          font-size: 25px;
+        }
+      }
       @if $power >= 100 and $power < 1000 {
-        font-size: 45px;
+        font-size: 35px;
 
         // Media queries placed here to avoid carrying over the rest of the logic
         @include smaller($mobile-threshold) {

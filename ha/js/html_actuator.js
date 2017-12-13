@@ -51,20 +51,20 @@ HTMLActuator.prototype.clearContainer = function (container) {
 
 HTMLActuator.prototype.addTile = function (tile) {
   var text = new Array();
-  text[1] = "觅食"
-  text[2] = "求偶"
-  text[3] = "抱对"
-  text[4] = "生殖细胞"
-  text[5] = "受精卵"
-  text[6] = "胚胎"
-  text[7] = "幼年蝌蚪"
-  text[8] = "成年蝌蚪"
-  text[9] = "幼蛙"
-  text[10] = "蛤"
-  text[11] = "ΘΘ"
+  text[1] = "早起"
+  text[2] = "少吃"
+  text[3] = "快走"
+  text[4] = "慢跑"
+  text[5] = "瑜伽"
+  text[6] = "平板撑"
+  text[7] = "跳舞"
+  text[8] = "蹦恰恰"
+  text[9] = "马甲线"
+  text[10] = "蜜桃臀"
+  text[11] = "3S!"
   text[12] = "Θ..Θ"
-  text[13] = "唔识得"
-  text[14] = "唔姿瓷"
+  text[13] = "666"
+  text[14] = "牛逼！"
   var self = this;
   var text2 = function (n) { var r = 0; while (n > 1) r++, n >>= 1; return r; }
 
@@ -133,19 +133,19 @@ HTMLActuator.prototype.updateScore = function (score) {
   if (difference > 0) {
     var addition = document.createElement("div");
     addition.classList.add("score-addition");
-    addition.textContent = "续" + difference +"秒";
+    addition.textContent = "减" + difference +"克";
 
     this.scoreContainer.appendChild(addition);
   }
 };
 
 HTMLActuator.prototype.updateBestScore = function (bestScore) {
-  this.bestContainer.textContent = "续" + bestScore + "秒";
+  this.bestContainer.textContent = "减" + bestScore + "克";
 };
 
 HTMLActuator.prototype.message = function (won) {
   var type    = won ? "game-won" : "game-over";
-  var message = won ? "你可以和我谈笑风生了!" : "还是要提高自己的姿势水平！";
+  var message = won ? "爸爸给你买裙子！" : "这就失败了？继续阿！";
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
@@ -164,14 +164,14 @@ HTMLActuator.prototype.clearMessage = function () {
 HTMLActuator.prototype.scoreTweetButton = function () {
   var tweet = document.createElement("a");
   tweet.classList.add("twitter-share-button");
-  tweet.setAttribute("href", "https://twitter.com/share");
+  tweet.setAttribute("href", "http://www.gotokeep.com/");
   tweet.setAttribute("data-via", "aenonsun");
   tweet.setAttribute("data-url", "http://hahagame.github.io/ha");
   tweet.setAttribute("data-counturl", "http://hahagame.github.io/ha");
-  tweet.textContent = "Tweet";
+  tweet.textContent = "Byebye~";
 
-  var text = "我为长者续命 " + this.score + " 秒，这是坠好滴！！ " +
-             "空膜误蛤，实续兴蛤。谈笑风生的机会在等着你 #文艺花样作死游戏#";
+  var text = "我自愿减肥 " + this.score + " 克，这是坠好滴！！ " +
+             "我想穿爬楼更快点！ #只想多减一点#";
   tweet.setAttribute("data-text", text);
 
   return tweet;
